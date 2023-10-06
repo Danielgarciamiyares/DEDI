@@ -131,15 +131,5 @@ public class Alumno
         return MayorEdad;
     }
     
-    
-    
-    
-//    public static ArrayList<String> ListaAlumnos()
-//    {
-//        String cadena;
-//        
-//     
-//        return cadena;
-//    }
-   
+   private static Alumno[] ArrayAlumnos=new Alumno[5];
 }
