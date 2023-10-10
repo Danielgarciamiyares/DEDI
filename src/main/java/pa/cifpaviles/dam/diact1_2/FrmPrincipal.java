@@ -34,15 +34,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
         lblEmailAlumno = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblEdadAlumno = new javax.swing.JLabel();
-        txtedad = new javax.swing.JTextField();
+        txtEdad = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
         lblTelefonoAlumno = new javax.swing.JLabel();
         lblErrorMaxAlumnos = new javax.swing.JLabel();
+        lblAlumnoJoven = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnAniadir.setText("Añadir alumno");
+        btnAniadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAniadirActionPerformed(evt);
+            }
+        });
 
         lblNombreAlumno.setText("Introduzca el nombre del alumno");
 
@@ -70,32 +76,39 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(222, 222, 222)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblErrorMaxAlumnos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblAlumnoJoven, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblTelefonoAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtTelefono)
-                                    .addComponent(lblEmailAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNombreAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtApellidos)
-                                .addComponent(lblApellidosAlumno))
-                            .addComponent(lblEdadAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtedad))))
-                .addGap(295, 295, 295))
+                            .addComponent(lblErrorMaxAlumnos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblTelefonoAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtTelefono, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblEmailAlumno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtNombre)
+                                        .addComponent(lblNombreAlumno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblEdadAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(txtApellidos)
+                                                .addComponent(lblApellidosAlumno))
+                                            .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(258, 258, 258))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(88, Short.MAX_VALUE)
-                .addComponent(lblErrorMaxAlumnos)
-                .addGap(18, 18, 18)
+                .addComponent(lblAlumnoJoven, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblNombreAlumno)
@@ -111,7 +124,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         .addComponent(lblEdadAlumno)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(lblEmailAlumno))
                 .addGap(37, 37, 37)
@@ -122,12 +135,49 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addComponent(lblTelefonoAlumno))
                 .addGap(34, 34, 34)
                 .addComponent(btnAniadir)
-                .addGap(117, 117, 117))
+                .addGap(28, 28, 28)
+                .addComponent(lblErrorMaxAlumnos)
+                .addGap(73, 73, 73))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAniadirActionPerformed
+       
+        String nombre=txtNombre.getText();
+        String apellidos=txtApellidos.getText();
+        String email=txtEmail.getText();
+        int edad=Integer.parseInt(txtEdad.getText());
+        String telefono=txtTelefono.getText();
+         
+        for(int i=0;i<Principal.ArrayAlumnos.length;i++)
+        {
+            Alumno a=new Alumno(nombre,apellidos ,email ,edad ,telefono );
+         //   Principal.ArrayAlumnos.add(a);/*.add es solo para arrayList*/
+            Principal.ContadorAlumno++;
+
+            AlumnoJoven(a);
+        }
+        
+        for(int i=0;i<Principal.ArrayAlumnos.length;i++)
+        {
+            System.out.println(Principal.ArrayAlumnos[i]);
+        }
+
+    }//GEN-LAST:event_btnAniadirActionPerformed
+
+    
+    public void AlumnoJoven(Alumno a)
+    {
+        int edadmenor=100;
+        if(a.getEdad()<edadmenor)
+        {
+            edadmenor=a.getEdad();
+            lblAlumnoJoven.setText("El alumno más joven es "+a.getNombre()+a.getApellidos()+" con "+a.getEdad()+" años");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -166,6 +216,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAniadir;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblAlumnoJoven;
     private javax.swing.JLabel lblApellidosAlumno;
     private javax.swing.JLabel lblEdadAlumno;
     private javax.swing.JLabel lblEmailAlumno;
@@ -173,9 +224,86 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombreAlumno;
     private javax.swing.JLabel lblTelefonoAlumno;
     private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
-    private javax.swing.JTextField txtedad;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the txtApellidos
+     */
+    public javax.swing.JTextField getTxtApellidos() {
+        return txtApellidos;
+    }
+
+    /**
+     * @param txtApellidos the txtApellidos to set
+     */
+    public void setTxtApellidos(javax.swing.JTextField txtApellidos) {
+        this.txtApellidos = txtApellidos;
+    }
+
+    /**
+     * @return the txtEdad
+     */
+    public javax.swing.JTextField getTxtEdad() {
+        return txtEdad;
+    }
+
+    /**
+     * @param txtEdad the txtEdad to set
+     */
+    public void setTxtEdad(javax.swing.JTextField txtEdad) {
+        this.txtEdad = txtEdad;
+    }
+
+    /**
+     * @return the txtEmail
+     */
+    public javax.swing.JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    /**
+     * @param txtEmail the txtEmail to set
+     */
+    public void setTxtEmail(javax.swing.JTextField txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+
+    /**
+     * @return the txtNombre
+     */
+    public  javax.swing.JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    /**
+     * @param txtNombre the txtNombre to set
+     */
+    public void setTxtNombre(javax.swing.JTextField txtNombre) {
+        this.txtNombre = txtNombre;
+    }
+
+    /**
+     * @return the txtTelefono
+     */
+    public javax.swing.JTextField getTxtTelefono() {
+        return txtTelefono;
+    }
+
+    /**
+     * @param txtTelefono the txtTelefono to set
+     */
+    public void setTxtTelefono(javax.swing.JTextField txtTelefono) {
+        this.txtTelefono = txtTelefono;
+    }
+
+
+    
+    
+    
+
+
 }

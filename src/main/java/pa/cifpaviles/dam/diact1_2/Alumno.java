@@ -5,6 +5,8 @@
 package pa.cifpaviles.dam.diact1_2;
 
 import java.util.ArrayList;
+import javax.swing.JTextField;
+import pa.cifpaviles.dam.diact1_2.FrmPrincipal;
 
 /**
  *
@@ -104,18 +106,19 @@ public class Alumno
         this.apellidos=apellidos;
         this.edad=edad;
     }
-    public void Alumno(String nombre,String apellidos,String email,int edad,String telefono)
-    {
-        this.nombre=nombre;
-        this.apellidos=apellidos;
-        this.email=email;
-        this.edad=edad;
-        this.telefono=telefono;
+
+    public Alumno(String nombre, String apellidos, String email, int edad, String telefono) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.edad = edad;
+        this.telefono = telefono;
     }
+    
     /*Metodos*/
     public boolean ComprobarEdad(Alumno a)
     {
-        boolean MayorEdad=false;
+        boolean MayorEdad;
         
         if(a.getEdad()>=18)
         {
@@ -130,6 +133,31 @@ public class Alumno
         
         return MayorEdad;
     }
+
     
-   private static Alumno[] ArrayAlumnos=new Alumno[5];
+    
+    
+//    public static Alumno nuevoAlumno()
+//    {
+//        
+//        String nombre=FrmPrincipal.getTxtNombre().getText();
+//        String apellidos=FrmPrincipal.txtApellidos.getText();
+//        String email=FrmPrincipal.txtEmail.getText();
+//        int edad=FrmPrincipal.txtEdad.getText();
+//        String telefono=FrmPrincipal.txtTelefono.getText();
+//        
+//        
+//        
+//        String getTxtNombre();
+//        
+//        
+//        Alumno a=new Alumno(nombre, apellidos, email, edad, telefono);
+//        return a;
+//    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + ", edad=" + edad + ", telefono=" + telefono + '}';
+    }
+    
 }
