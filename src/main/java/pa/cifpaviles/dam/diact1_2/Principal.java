@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Principal 
 {
-    public static Array[] ArrayAlumnos=new Array[5];
-    static int ContadorAlumno=0;
+    public static Alumno[] ArrayAlumnos=new Alumno[5];
+
 
     public static void main(String[] args) 
     {

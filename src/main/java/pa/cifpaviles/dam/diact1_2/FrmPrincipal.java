@@ -62,7 +62,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         lblErrorMaxAlumnos.setForeground(java.awt.Color.red);
         lblErrorMaxAlumnos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblErrorMaxAlumnos.setText("Máximo de alumnos alcanzado(5)");
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -106,7 +105,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
+                .addContainerGap(104, Short.MAX_VALUE)
                 .addComponent(lblAlumnoJoven, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,9 +134,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addComponent(lblTelefonoAlumno))
                 .addGap(34, 34, 34)
                 .addComponent(btnAniadir)
-                .addGap(28, 28, 28)
-                .addComponent(lblErrorMaxAlumnos)
-                .addGap(73, 73, 73))
+                .addGap(18, 18, 18)
+                .addComponent(lblErrorMaxAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
 
         pack();
@@ -145,20 +144,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void btnAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAniadirActionPerformed
        
+        
+        
         String nombre=txtNombre.getText();
         String apellidos=txtApellidos.getText();
         String email=txtEmail.getText();
         int edad=Integer.parseInt(txtEdad.getText());
         String telefono=txtTelefono.getText();
          
-        for(int i=0;i<Principal.ArrayAlumnos.length;i++)
-        {
+       
             Alumno a=new Alumno(nombre,apellidos ,email ,edad ,telefono );
-         //   Principal.ArrayAlumnos.add(a);/*.add es solo para arrayList*/
-            Principal.ContadorAlumno++;
+            Principal.ArrayAlumnos[ContadorAlumno]= a;
+            ContadorAlumno++;
 
             AlumnoJoven(a);
-        }
+            MaxAlumnos();
         
         for(int i=0;i<Principal.ArrayAlumnos.length;i++)
         {
@@ -168,13 +168,27 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAniadirActionPerformed
 
     
+    static int ContadorAlumno=0;
     public void AlumnoJoven(Alumno a)
     {
         int edadmenor=100;
+        
         if(a.getEdad()<edadmenor)
         {
-            edadmenor=a.getEdad();
-            lblAlumnoJoven.setText("El alumno más joven es "+a.getNombre()+a.getApellidos()+" con "+a.getEdad()+" años");
+            edadmenor=Principal.ArrayAlumnos[ContadorAlumno].getEdad();
+            lblAlumnoJoven.setText("El alumno más joven es "
+                    +Principal.ArrayAlumnos[ContadorAlumno].getNombre()
+                    +" "+Principal.ArrayAlumnos[ContadorAlumno].getApellidos()
+                    +" con "+Principal.ArrayAlumnos[ContadorAlumno].getEdad()+" años");
+        }
+    }
+    
+    public void MaxAlumnos()
+    {
+        if (ContadorAlumno==5)
+        {
+            lblErrorMaxAlumnos.setText("Máximo de alumnos alcanzado(5)");
+            btnAniadir.setEnabled(false);
         }
     }
     
