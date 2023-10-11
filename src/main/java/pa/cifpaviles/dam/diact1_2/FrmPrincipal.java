@@ -144,36 +144,31 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void btnAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAniadirActionPerformed
        
-        
-        
         String nombre=txtNombre.getText();
         String apellidos=txtApellidos.getText();
         String email=txtEmail.getText();
         int edad=Integer.parseInt(txtEdad.getText());
         String telefono=txtTelefono.getText();
          
-       
             Alumno a=new Alumno(nombre,apellidos ,email ,edad ,telefono );
             Principal.ArrayAlumnos[ContadorAlumno]= a;
+            
+            AlumnoJoven(a);
             ContadorAlumno++;
 
-            AlumnoJoven(a);
             MaxAlumnos();
         
         for(int i=0;i<Principal.ArrayAlumnos.length;i++)
         {
             System.out.println(Principal.ArrayAlumnos[i]);
         }
-
     }//GEN-LAST:event_btnAniadirActionPerformed
 
-    
     static int ContadorAlumno=0;
     public void AlumnoJoven(Alumno a)
     {
         int edadmenor=100;
-        
-        if(a.getEdad()<edadmenor)
+        if(Principal.ArrayAlumnos[ContadorAlumno].getEdad()<edadmenor)
         {
             edadmenor=Principal.ArrayAlumnos[ContadorAlumno].getEdad();
             lblAlumnoJoven.setText("El alumno más joven es "
@@ -243,76 +238,76 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
-
-    /**
-     * @return the txtApellidos
-     */
-    public javax.swing.JTextField getTxtApellidos() {
-        return txtApellidos;
-    }
-
-    /**
-     * @param txtApellidos the txtApellidos to set
-     */
-    public void setTxtApellidos(javax.swing.JTextField txtApellidos) {
-        this.txtApellidos = txtApellidos;
-    }
-
-    /**
-     * @return the txtEdad
-     */
-    public javax.swing.JTextField getTxtEdad() {
-        return txtEdad;
-    }
-
-    /**
-     * @param txtEdad the txtEdad to set
-     */
-    public void setTxtEdad(javax.swing.JTextField txtEdad) {
-        this.txtEdad = txtEdad;
-    }
-
-    /**
-     * @return the txtEmail
-     */
-    public javax.swing.JTextField getTxtEmail() {
-        return txtEmail;
-    }
-
-    /**
-     * @param txtEmail the txtEmail to set
-     */
-    public void setTxtEmail(javax.swing.JTextField txtEmail) {
-        this.txtEmail = txtEmail;
-    }
-
-    /**
-     * @return the txtNombre
-     */
-    public  javax.swing.JTextField getTxtNombre() {
-        return txtNombre;
-    }
-
-    /**
-     * @param txtNombre the txtNombre to set
-     */
-    public void setTxtNombre(javax.swing.JTextField txtNombre) {
-        this.txtNombre = txtNombre;
-    }
-
-    /**
-     * @return the txtTelefono
-     */
-    public javax.swing.JTextField getTxtTelefono() {
-        return txtTelefono;
-    }
-
-    /**
-     * @param txtTelefono the txtTelefono to set
-     */
-    public void setTxtTelefono(javax.swing.JTextField txtTelefono) {
-        this.txtTelefono = txtTelefono;
-    }
+//
+//    /**
+//     * @return the txtApellidos
+//     */
+//    public javax.swing.JTextField getTxtApellidos() {
+//        return txtApellidos;
+//    }
+//
+//    /**
+//     * @param txtApellidos the txtApellidos to set
+//     */
+//    public void setTxtApellidos(javax.swing.JTextField txtApellidos) {
+//        this.txtApellidos = txtApellidos;
+//    }
+//
+//    /**
+//     * @return the txtEdad
+//     */
+//    public javax.swing.JTextField getTxtEdad() {
+//        return txtEdad;
+//    }
+//
+//    /**
+//     * @param txtEdad the txtEdad to set
+//     */
+//    public void setTxtEdad(javax.swing.JTextField txtEdad) {
+//        this.txtEdad = txtEdad;
+//    }
+//
+//    /**
+//     * @return the txtEmail
+//     */
+//    public javax.swing.JTextField getTxtEmail() {
+//        return txtEmail;
+//    }
+//
+//    /**
+//     * @param txtEmail the txtEmail to set
+//     */
+//    public void setTxtEmail(javax.swing.JTextField txtEmail) {
+//        this.txtEmail = txtEmail;
+//    }
+//
+//    /**
+//     * @return the txtNombre
+//     */
+//    public  javax.swing.JTextField getTxtNombre() {
+//        return txtNombre;
+//    }
+//
+//    /**
+//     * @param txtNombre the txtNombre to set
+//     */
+//    public void setTxtNombre(javax.swing.JTextField txtNombre) {
+//        this.txtNombre = txtNombre;
+//    }
+//
+//    /**
+//     * @return the txtTelefono
+//     */
+//    public javax.swing.JTextField getTxtTelefono() {
+//        return txtTelefono;
+//    }
+//
+//    /**
+//     * @param txtTelefono the txtTelefono to set
+//     */
+//    public void setTxtTelefono(javax.swing.JTextField txtTelefono) {
+//        this.txtTelefono = txtTelefono;
+//    }
 
 
     

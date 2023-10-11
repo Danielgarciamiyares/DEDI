@@ -106,7 +106,6 @@ public class Alumno
         this.apellidos=apellidos;
         this.edad=edad;
     }
-
     public Alumno(String nombre, String apellidos, String email, int edad, String telefono) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -114,7 +113,6 @@ public class Alumno
         this.edad = edad;
         this.telefono = telefono;
     }
-    
     /*Metodos*/
     public boolean ComprobarEdad(Alumno a)
     {
@@ -130,31 +128,8 @@ public class Alumno
             MayorEdad=false;
             System.out.println("El alumno "+a.getNombre()+" "+a.getApellidos()+" es menor de edad");
         }
-        
         return MayorEdad;
     }
-
-    
-    
-    
-//    public static Alumno nuevoAlumno()
-//    {
-//        
-//        String nombre=FrmPrincipal.getTxtNombre().getText();
-//        String apellidos=FrmPrincipal.txtApellidos.getText();
-//        String email=FrmPrincipal.txtEmail.getText();
-//        int edad=FrmPrincipal.txtEdad.getText();
-//        String telefono=FrmPrincipal.txtTelefono.getText();
-//        
-//        
-//        
-//        String getTxtNombre();
-//        
-//        
-//        Alumno a=new Alumno(nombre, apellidos, email, edad, telefono);
-//        return a;
-//    }
-
     @Override
     public String toString() {
         return "Alumno{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + ", edad=" + edad + ", telefono=" + telefono + '}';
